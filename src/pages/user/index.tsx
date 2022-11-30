@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BaseLayout } from "../../components/layouts/baseLayout";
 
 interface GetUserProps {
-  GetUserProps: number;
+  userId: number;
   id: number;
   title: string;
   body: string;
@@ -30,6 +30,8 @@ export const UserPage = () => {
           <li key={item.userId}>
             <a>{item.userId}</a>
             <a>{item.title}</a>
+            <a>{item.body}</a>
+            <a>{item.Id}</a>
           </li>
         ))}
       </ul>
