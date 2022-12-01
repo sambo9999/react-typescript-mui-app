@@ -17,9 +17,7 @@ export default function RegisterFrom() {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
-  console.log(watch("example")); // watch input value by passing the name of it
-
+  console.log(watch("example"));
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <TextField defaultValue="test" {...register("example")} /> <br />
