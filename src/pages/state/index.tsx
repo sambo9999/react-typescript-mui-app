@@ -4,6 +4,8 @@ import { BaseLayout } from "../../components/layouts/baseLayout";
 import { useCountStore } from "../../store";
 import { useStore } from "../../store/feature/useStore";
 
+//https://docs.pmnd.rs/zustand/getting-started/comparison
+
 export const StatePage = () => {
   // style  one
   const bears = useStore((state: any) => state.bears);
@@ -14,6 +16,7 @@ export const StatePage = () => {
   const count = useCountStore((state: any) => state.count);
   const increment = useCountStore((state: any) => state.increment);
   const decrement = useCountStore((state: any) => state.decrement);
+
   return (
     <>
       <BaseLayout>

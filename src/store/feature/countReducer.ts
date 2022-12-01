@@ -1,28 +1,28 @@
 import create from 'zustand'
 
 type State = {
-  count: number
+    count: number
 }
 
 type Actions = {
-  increment: (qty: number) => void
-  decrement: (qty: number) => void
+    increment: (qty: number) => void
+    decrement: (qty: number) => void
 }
 
 type Action = {
-  type: keyof Actions
-  qty: number
+    type: keyof Actions
+    qty: number
 }
 
 export const countReducer = (state: State, action: Action) => {
-  switch (action.type) {
-    case 'increment':
-      return { count: state.count + action.qty }
-    case 'decrement':
-      return { count: state.count - action.qty }
-    default:
-      return state
-  }
+    switch (action.type) {
+        case 'increment':
+            return { count: state.count + action.qty }
+        case 'decrement':
+            return { count: state.count - action.qty }
+        default:
+            return state
+    }
 }
 
 // const useCountStore = create<State & Actions>((set) => ({
