@@ -5,8 +5,9 @@ type State = {
 }
 
 type Actions = {
-    increment: (qty: number) => void
-    decrement: (qty: number) => void
+    increment?: (count: number) => void
+    decrement?: (count: number) => void
+    // dispatch: (action: Actions) => void,
 }
 
 type Action = {
@@ -14,18 +15,26 @@ type Action = {
     qty: number
 }
 
-export const countReducer = (state: State, action: Action) => {
+const reducer = (state: State, action: Action) => {
     switch (action.type) {
         case 'increment':
-            return { count: state.count + action.qty }
+            return { count: state.count + 1 }
         case 'decrement':
-            return { count: state.count - action.qty }
+            return { count: state.count - 1 }
         default:
             return state
     }
-}
+};
 
-// const useCountStore = create<State & Actions>((set) => ({
-//   count: 0,
-//   dispatch: (action: Action) => set((state) => countReducer(state, action)),
+
+
+export const useCountReducerStore = create<State & Actions>((set) => ({
+    count: 0,
+    dispatch: (action: Action) => set((state) => reducer(state, action)),
+}))
+
+
+// export const countReducer = create<State & Actions>((set) => ({
+//     count: 0,
+//     dispatch: (action: Action) => set((state) => Reducer(state, action)),
 // }))

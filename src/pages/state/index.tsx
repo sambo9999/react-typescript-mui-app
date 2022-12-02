@@ -2,6 +2,7 @@ import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { BaseLayout } from "../../components/layouts/baseLayout";
 import { useCountStore } from "../../store";
+import { useCountReducerStore } from "../../store/feature";
 import { useStore } from "../../store/feature/useStore";
 
 //https://docs.pmnd.rs/zustand/getting-started/comparison
@@ -13,10 +14,12 @@ export const StatePage = () => {
   const decreasePopulation = useStore((state: any) => state.decreasePopulation);
   const removeAllBears = useStore((state: any) => state.removeAllBears);
   //style two
-  const count = useCountStore((state: any) => state.count);
+  // const count = useCountStore((state: any) => state.count);
   const increment = useCountStore((state: any) => state.increment);
   const decrement = useCountStore((state: any) => state.decrement);
 
+  // reduce
+  // const { dispatch, count } = useCountReducerStore((state: any) => state);
   return (
     <>
       <BaseLayout>
@@ -50,9 +53,9 @@ export const StatePage = () => {
         </Stack>
 
         {/* style tow */}
-        <h1>{count}</h1>
-        <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
+        {/* <h1>{count}</h1>
+        <button onClick={() => dispatch({ type: "increment" })}>+</button>
+        <button onClick={() => dispatch({ type: "decrement" })}>-</button> */}
       </BaseLayout>
     </>
   );
