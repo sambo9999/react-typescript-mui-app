@@ -7,7 +7,6 @@ type State = {
 type Actions = {
     increment?: (count: number) => void
     decrement?: (count: number) => void
-    // dispatch: (action: Actions) => void,
 }
 
 type Action = {
@@ -26,15 +25,7 @@ const reducer = (state: State, action: Action) => {
     }
 };
 
-
-
 export const useCountReducerStore = create<State & Actions>((set) => ({
     count: 0,
     dispatch: (action: Action) => set((state) => reducer(state, action)),
 }))
-
-
-// export const countReducer = create<State & Actions>((set) => ({
-//     count: 0,
-//     dispatch: (action: Action) => set((state) => Reducer(state, action)),
-// }))
