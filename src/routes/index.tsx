@@ -4,6 +4,7 @@ import Testing from "../pages/dashboard";
 import { LoginPage } from "../pages/login";
 import { ProductPage } from "../pages/product";
 import { StatePage } from "../pages/state";
+import { SwrPage } from "../pages/swr";
 import { UserPage } from "../pages/user";
 
 export const router = createBrowserRouter([
@@ -34,5 +35,9 @@ export const router = createBrowserRouter([
   {
     path: "das",
     element: <Testing />,
+  },
+  {
+    path: "swr",
+    element: <SwrPage />,
   },
 ]);
