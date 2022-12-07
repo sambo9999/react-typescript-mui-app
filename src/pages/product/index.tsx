@@ -1,4 +1,5 @@
 import React from "react";
+import { AhookFunction } from "../../ahook";
 import { BaseLayout } from "../../components/layouts/baseLayout";
 import { SearchData } from "../../fetchData/dataSearch";
 
