@@ -1,1 +1,1 @@
-export * from './request/comment.request'
+export * from './request/index'

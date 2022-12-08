@@ -1,4 +1,3 @@
-// import { BASE_URL } from "../api-root"
 import axios, { AxiosRequestConfig } from "axios"
 import { BASE_URL } from "../routes"
 import { getToken } from "../utility"
@@ -10,10 +9,10 @@ export const getAxiosConfig = (override?: AxiosRequestConfig) => {
         ...override,
     }
     const token = getToken()
-    if (token) { 
+    if (token) {
         obj = {
             headers: {
-                Authorization: `Report-Client-Token ${token}`,
+                Authorization: `${token}`,
             },
             ...obj,
         }
