@@ -1,11 +1,28 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { QueryCache, useQuery } from "react-query";
+import { commentsSdk } from "../sdk";
 
 export const ReactQuery = () => {
+  const getComment = commentsSdk.getAll().then((res: any) => res);
+
+  // const queryCache = new QueryCache({
+  //   onError: (error) => {
+  //     console.log(error);
+  //   },
+  //   onSuccess: (getComment) => {
+  //     console.log(getComment);
+  //   },
+  // });
+
+  // const query = queryCache.find("posts");
+  // console.log(query);
+
   // Fetcher function
   const getFacts = async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
-    return res.json();
+    const getComment = await commentsSdk.getAll().then((res: any) => res);
+    return getComment;
+    // const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
+    // return res.json();
   };
   // Using the hook
   const { data, error, isLoading, status } = useQuery("randomFacts", getFacts);
@@ -20,12 +37,13 @@ export const ReactQuery = () => {
       {status === "idle" && <div>Idle...</div>}
       {status === "success" && (
         <ul>
-          {data.map((item: any) => (
-            <li key={item.userId}>
-              <h2>{item.id}</h2>
-              <p>{item.title}</p>
-            </li>
-          ))}
+          {data.map((item: any, index: any) => {
+            return (
+              <div key={index}>
+                <h2>{item.name}</h2>
+              </div>
+            );
+          })}
         </ul>
       )}
     </div>

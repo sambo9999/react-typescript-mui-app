@@ -11,9 +11,9 @@ export const SwrPage = () => {
     <BaseLayout>
       {/* <CallBackFunction />
       <HandleError /> */}
-      <TypescriptLanguage />
+      {/* <TypescriptLanguage /> */}
       {/* <GetFullName firstName="sambo"  lastName="sambo" /> */}
-      {/* <ReactQuery /> */}
+      <ReactQuery />
     </BaseLayout>
   );
 };
