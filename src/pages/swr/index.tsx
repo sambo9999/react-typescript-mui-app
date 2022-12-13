@@ -1,6 +1,7 @@
 import React from "react";
 import { BaseLayout } from "../../components/layouts/baseLayout";
 import { CallBackFunction } from "../../hooks/callBack";
+import { UseMemoFunction } from "../../hooks/useMemo";
 import { ReactQuery } from "../../react-query";
 import HandleError from "../../swr/error";
 import { MakeFullName } from "../../typescript/generic";
@@ -13,7 +14,8 @@ export const SwrPage = () => {
       <HandleError /> */}
       {/* <TypescriptLanguage /> */}
       {/* <GetFullName firstName="sambo"  lastName="sambo" /> */}
-      <ReactQuery />
+      {/* <ReactQuery /> */}
+      <UseMemoFunction />
     </BaseLayout>
   );
 };
